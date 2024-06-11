@@ -1,0 +1,10 @@
+name = "lms"
+description = "Library Management System"
+version = "0.1.0-dev"
+
+authors = ["John Holeman"]
+maintainers = ["John Holeman <john.holeman@gmail.com>"]
+maintainers-logins = ["holemanj"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
