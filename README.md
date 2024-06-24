@@ -1,5 +1,5 @@
 This is based on the capstone project from an online C++ course 
-I took years ago.  Unfortunately, I can remember neither the name 
+I took years ago.  Unfortunately, I cannot remember neither the name 
 of the organization or the instructor... if you happen to see
 this, send me a message and I will update the attribution accordingly.
 
