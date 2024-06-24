@@ -1,0 +1,11 @@
+<LMS xmlns="LMS">
+	<defaultFile>inventory.txt</defaultFile>
+	<defaultPath>./resources</defaultPath>
+	<structure delimiter="|">
+		<field required="1">Title</field>
+		<field required="0">Author(s)</field>
+		<field required="0">Publisher</field>
+		<field required="0">Year</field>
+		<field required="1">Count</field>
+	</structure>
+</LMS>
