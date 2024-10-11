@@ -1,10 +1,10 @@
-pub struct LineParser<'a> {
-	pub fields: Vec<&'a str>,
+pub struct LineParser {
+	pub fields: Vec<String>,
 	delimiter: char,
 }
 
-impl LineParser <'_> {
-	pub fn new_parser(field_list: Vec<&str>, delimiter_choice: char) -> LineParser {
+impl LineParser {
+	pub fn new_parser(field_list: Vec<String>, delimiter_choice: char) -> LineParser {
 		LineParser {
 			fields: field_list,
 			delimiter: delimiter_choice,

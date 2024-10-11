@@ -1,3 +1,5 @@
+use std::{fs::File, io::Read};
+use std::str;
 use serde::{Deserialize, Serialize};
 use serde_xml_rs::{from_str, to_string};
 
@@ -37,8 +39,8 @@ impl DB_Config {
 	}
 
 	pub fn db_config(setup_file: String) -> Self {
-		let defns:LMS_definition = parse_setup();
-		DB_Config{filename:defns.defaultFile, 
+		let defns:LMS_definition = parse_setup(setup_file);
+		DB_Config{filename:format!("{}/{}",defns.defaultPath,&defns.defaultFile),
 			fields:defns.structure.field.into_iter().map(|this_field| this_field.fieldname.to_string()).collect(),
 			delimiter: defns.structure.delimiter}
 	}
@@ -64,55 +66,16 @@ struct LMS_field {
 	fieldname: String,
 }
 	
-fn parse_setup() -> LMS_definition {
-		let data: &'static str = r##"
-<LMS xmlns="LMS">
-	<defaultFile>inventory.txt</defaultFile>
-	<defaultPath>./resources</defaultPath>
-	<structure delimiter="|">
-		<field required="1">Title</field>
-		<field required="0">Author(s)</field>
-		<field required="0">Publisher</field>
-		<field required="0">Year</field>
-		<field required="1">Count</field>
-	</structure>
-</LMS>	"##;
+fn parse_setup(setup_file: String) -> LMS_definition {
+	let error_file = setup_file.clone();
+	let mut setup = match File::open(setup_file) {	
+		Ok(open_file) => open_file,
+		Err(_) => panic!("\n\nSetup file {} not found.\n\n",error_file),
+	};
 
-	from_str(data).unwrap()
+	let mut data:String=String::new();
+	setup.read_to_string(&mut data).unwrap();
+
+	//return XML parsed into LMS_definition structure
+	from_str(&data).unwrap()
 }
-
-
-/*	pub fn db_config(setup_file: String) -> Self {
-		println!("Reading from {:?}",setup_file);
-		let xmlData: String = fs::read_to_string(setup_file).unwrap();
-		let root: Element = xmlData.parse().unwrap();
-		
-		let mut read_filename: String = "".to_string();
-		let mut read_delimiter: char = '|';
-		let mut read_fields: Vec<&str> = Vec::new();
-		
-		for e in root.children() {
-			match e.name() {
-				"defaultFile" =>  read_filename = e.text(),
-				"defaultPath" => println!("Default filepath: {:?}",e.text()),
-				"structure" => {
-					read_delimiter = e.attr("delimiter").unwrap().chars().next().unwrap();
-					println!("Data fields:");
-					for field in e.children() {
-						if field.attr("required").unwrap() == "1" {
-							print!("* ");
-							read_fields.push(&field.text());
-							//read_fields.push(field_data::new_required(field.text()));
-						} else {
-							//read_fields.push(field_data::new_notrequired(field.text()));
-							read_fields.push(&field.text());
-						}
-						println!("{:?}", field.text());
-					}
-				}
-				_=>{println!("{:?}",e.name())}
-			}
-		}
-		DB_Config{filename:read_filename, fields:read_fields, delimiter:read_delimiter}
-	}*/
-

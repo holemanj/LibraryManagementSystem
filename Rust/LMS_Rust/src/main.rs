@@ -6,10 +6,6 @@ use std::io::prelude::*;
 use std::env;
 use std::error::Error;
 
-//struct DB_Config {
-	//filename: String,
-//}
-
 fn main() {
 	let args: Vec<String> = env::args().collect();
 	
@@ -18,12 +14,7 @@ fn main() {
 	//let exe_path = env::current_exe().unwrap();
 	//let current_path = env::current_dir().unwrap();
 	
-	
-    let field_headers=vec!["Title","Authors","Publisher","Year","Count"];
-    let parser=line_parser::LineParser::new_parser(field_headers,'|');
-    
     let default_filename=String::from("resources/inventory.txt");
-    
 	
     let config = db_config::DB_Config::db_config(if args.len()>1 && !args[1].is_empty() {
 		args[1].clone()
@@ -31,12 +22,18 @@ fn main() {
 		default_filename
 	});
 	
+println!("Reading from: {}", config.filename);
+
     let mut file = match File::open(config.filename) {	
 		Ok(open_file) => open_file,
 		Err(_) => panic!("\n\nInventory file not found.\n\n"),
 	};
 
-    
+    //let field_headers=vec!["Title","Authors","Publisher","Year","Count"];
+    //let parser=line_parser::LineParser::new_parser(field_headers,'|');
+	let field_headers=config.fields;
+	let parser=line_parser::LineParser::new_parser(field_headers,config.delimiter);
+
 //    let mut file = File::open(config.filename).unwrap();
     let mut contents = String::new();
     file.read_to_string(&mut contents).unwrap();
