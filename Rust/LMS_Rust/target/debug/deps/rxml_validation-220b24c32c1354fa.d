@@ -1,6 +1,0 @@
-/home/holemanj/Projects/LibraryManagementSystem/Rust/LMS_Rust/target/debug/deps/librxml_validation-220b24c32c1354fa.rmeta: /home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/lib.rs /home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/selectors.rs
-
-/home/holemanj/Projects/LibraryManagementSystem/Rust/LMS_Rust/target/debug/deps/rxml_validation-220b24c32c1354fa.d: /home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/lib.rs /home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/selectors.rs
-
-/home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/lib.rs:
-/home/holemanj/.cargo/registry/src/index.crates.io-6f17d22bba15001f/rxml_validation-0.9.1/src/selectors.rs:
