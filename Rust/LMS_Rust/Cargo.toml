@@ -7,3 +7,5 @@ edition = "2018"
 
 [dependencies]
 minidom="*"
+serde = { version = "1.0.210", features = ["derive"] }
+serde-xml-rs = "0.6.0"
