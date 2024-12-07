@@ -8,3 +8,6 @@ maintainers-logins = ["holemanj"]
 licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
 website = ""
 tags = []
+
+[[depends-on]]
+xmlada = "^25.0.0"

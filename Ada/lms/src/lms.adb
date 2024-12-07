@@ -1,4 +1,6 @@
+with ReadPrefs;
+
 procedure Lms is
 begin
-   null;
+   ReadPrefs;
 end Lms;
