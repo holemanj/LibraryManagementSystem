@@ -1,0 +1,6 @@
+Thai Food and Cooking|Judy Bastyra,Becky Johnson|Hermes Hourse||2|
+Numerical Electrodynamics|Umran S Inan,Robert Marshall|Cambridge|2011|1|
+RISC-V Assembly Language|Anthony J Dos Reis|||1|
+Harry Potter|JK Rowling|Scholastic|1991|1|
+Dune|Frank Herbert|Random House|1960|1|
+GURPS 4th Edition Basic Set Characters|Steve Jackson,Sean Punch,David Pulver|Steve Jackson Games|2005|2|

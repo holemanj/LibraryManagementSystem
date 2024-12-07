@@ -1,0 +1,20 @@
+{
+    "defaultFile": "inventory.txt",
+    "defaultPath": "./resources",
+    "structure":
+    {
+        "delimiter": "|",
+        "fields": [
+            {"fieldName": "Title",
+            "required": true},
+            {"fieldName": "Author(s)",
+            "required": false},
+            {"fieldName": "Publisher",
+            "required": false},
+            {"fieldName": "Year",
+            "required": false},
+            {"fieldName": "Count",
+            "required": true}
+        ]
+    }
+}
