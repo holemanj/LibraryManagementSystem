@@ -22,7 +22,7 @@ fn main() {
 		default_filename
 	});
 	
-println!("Reading from: {}", config.filename);
+println!("Reading from: {}", config.config.filename);
 
     let mut file = match File::open(config.filename) {	
 		Ok(open_file) => open_file,

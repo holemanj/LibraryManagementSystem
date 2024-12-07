@@ -1,4 +1,4 @@
-<LMS xmlns="LMS">
+<LMS>
 	<defaultFile>inventory.txt</defaultFile>
 	<defaultPath>./resources</defaultPath>
 	<structure delimiter="|">
