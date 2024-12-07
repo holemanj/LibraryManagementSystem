@@ -35,4 +35,8 @@ Design considerations:
   (fields and delimited).
 - All output items should be made accessible for any type of user front-end (the
   program should be adaptable to be used as a web backend, or a windowed
-  aplication)
+  application)
+
+2024/12/7: design update - use XML and/or JSON to store specifics of data file 
+layout (filename and path, delimeter, field names). Use XML libraries for each
+language to read at program start up.
